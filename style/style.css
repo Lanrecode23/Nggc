@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC:wght@400;700&family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+:root {
+  --primary-color: #facc15;  
+  --text-dark: #181611;
+}
+body{
+    background-color: #fbfbfc;
+}
+.Admin_dashboard{
+    font-family: "Abel", sans-serif;
+    margin: 2rem;
+}
+.form {
+  background-color: #fff;
+  display: block;
+  padding: 2rem;
+  margin: 5rem auto auto auto;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  font-family: "Abel", sans-serif;
+  text-align: center;
+  color: #000;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input, .form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.input-container span {
+  display: grid;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  place-content: center;
+}
+
+.input-container span svg {
+  color: #9CA3AF;
+  width: 1rem;
+  height: 1rem;
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  color: var(--text-dark);
+  background-color: var(--primary-color);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-family: "Abel", sans-serif;
+  cursor: pointer;
+  width: 368px;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+.signup-link {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+
+/* From Uiverse.io by IWhat1 */ 
+.card-container {
+  width: 350px;
+  height: 440px;
+  background: transparent;
+  padding: 20px;
+  margin: auto;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle1 {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #2879f3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle2 {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #f37e10;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.log-card {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: absolute;
+  width: 300px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.para {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.text {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: lightslategray;
+}
+
+.input-group {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.input {
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  width: 100%;
+  border: none;
+  padding: 8px 16px;
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  font-weight: 600;
+  color: #2879f3;
+}
+
+.input:hover {
+  color: #2879f3;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.password-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.checkbox-group {
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.forget-password {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2879f3;
+  text-decoration: none;
+}
+
+.forget-password:hover {
+  text-decoration: underline;
+  color: #f37e10;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #2879f3;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background-color: #0653c7;
+}
+
+.no-account {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.link {
+  font-weight: 800;
+  color: #2879f3;
+}
+
+.link:hover {
+  color: #f37e10;
+  text-decoration: underline;
+}

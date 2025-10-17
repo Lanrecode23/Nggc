@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - Add Event</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <h2 class="Admin_dashboard">Admin Dashboard</h2>
+
+    <!-- Admin Login Form -->
+    <form class="form" id="loginForm">
+        <p class="form-title">Login to Add Events</p>
+        <div class="input-container">
+            <input placeholder="Enter email" type="email" name="email" required>
+            <span>
+                <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                        stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+            </span>
+        </div>
+        <div class="input-container">
+            <input placeholder="Enter password" type="password" name="password" required>
+        </div>
+        <button class="submit" type="submit">
+            L o g i n
+        </button>
+        <p id="loginMsg" style="color: red; margin-top: 8px;"></p>
+    </form>
+
+    <!-- Event Upload Form (hidden until login) -->
+    <form id="eventForm" style="display: none;">
+        <div class="card-container">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="container">
+                <div class="log-card">
+                    <div class="input-group">
+                        <p class="text">Title</p>
+                        <input class="input" type="text" name="title" placeholder="Event Title" required>
+
+                        <p class="text">Start Date</p>
+                        <input class="input" type="date" name="startDate" required>
+
+                        <p class="text">End Date (optional)</p>
+                        <input class="input" type="date" name="endDate">
+
+                        <p class="text">Time</p>
+                        <input type="text" name="time" placeholder="e.g. 9:00 AM - 6:00 PM"  class="input" />
+
+                        <p class="text">Details of the event</p>
+                        <textarea name="description" placeholder="Event Description" class="input" required></textarea>
+                    </div>
+
+                    <div style="display:flex; gap:8px; align-items:center;">
+                        <button class="btn" type="submit">Add event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="./script/main.js"></script>
+</body>
+</html>
