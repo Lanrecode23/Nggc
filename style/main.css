@@ -1,16 +1,76 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC:wght@400;700&family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-.hero_text{
+.flex-col h1{
     font-family: "Lexend Deca", sans-serif;
+
 }
 .subHero_text{
-    font-family: "Roboto", sans-serif;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 18px!important;
 }
 .font_all{
-    font-family: "Lexend Deca", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     cursor: pointer;
 }
 .font_all .text_round{
     font-family: "Abel", sans-serif;
+}
+.cursor svg{
+   color: rgb(235, 230, 226);
+}
+.service_time {
+    font-family: "Lexend Deca", sans-serif;
+    color: #fff;
+    text-shadow: 20px 20px 20px rgb(226, 9, 143);
+}
+
+.comment a:hover{
+    color: #f5b83d;
+}
+#pastors, #about, #ministries, #events, #eventsList, #contact{
+    font-family: "Ubuntu", "san-Serif";
+}
+
+@media (max-width: 480px) {
+  .bg-cover {
+    padding: 4rem 1rem;
+  }
+  .flex-col h1 {
+    font-size: 34px !important
+}
+}
+/* 📱 Small devices (phones, ≤ 640px) */
+@media (max-width: 640px) {
+  .bg-cover {
+    padding: 4rem;
+  }
+}
+
+/* 💻 Medium devices (tablets, ≤ 768px) */
+@media (max-width: 768px) {
+  .bg-cover {
+    padding: 5rem 2rem;
+  }
+}
+
+/* 💻 Large devices (small laptops, ≤ 1024px) */
+@media (max-width: 1024px) {
+  .bg-cover {
+    padding: 6rem 3rem;
+  }
+}
+
+/* 🖥️ Extra large devices (desktop, ≤ 1280px) */
+@media (max-width: 1280px) {
+  .bg-cover {
+    padding: 7rem 4rem;
+  }
+}
+
+/* 🖥️ 2XL screens (very large monitors, > 1536px) */
+@media (min-width: 1536px) {
+  .bg-cover {
+    padding: 8rem 5rem;
+  }
 }

@@ -13,7 +13,7 @@ body{
 .form {
   background-color: #fff;
   display: block;
-  padding: 2rem;
+  padding: 2rem  3.3rem 2rem 2rem;
   margin: 5rem auto auto auto;
   max-width: 350px;
   border-radius: 0.5rem;
@@ -96,7 +96,6 @@ body{
   text-decoration: underline;
 }
 
-/* From Uiverse.io by IWhat1 */ 
 .card-container {
   width: 350px;
   height: 440px;
@@ -240,4 +239,7 @@ body{
 .link:hover {
   color: #f37e10;
   text-decoration: underline;
+}
+#eventsList{
+    font-family: "Ubuntu", "san-Serif";
 }
