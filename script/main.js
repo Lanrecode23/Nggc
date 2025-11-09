@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/fireba
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 import { getFirestore, collection, addDoc, Timestamp, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
-// 🔧 Your Firebase configuration (replace with your actual config)
+// Firebase configuration 
 const firebaseConfig = {
   apiKey: "AIzaSyDC5VwP6EEIcgO0m1wodA9FwXt_vn1GfQo",
   authDomain: "nggc-site.firebaseapp.com",
@@ -23,7 +23,7 @@ const db = getFirestore(app);
 const loginForm = document.getElementById('loginForm');
 const eventForm = document.getElementById('eventForm');
 
-// Helper: convert "yyyy-mm-dd" string → Firestore Timestamp
+// convert "yyyy-mm-dd" string to Firestore Timestamp
 function dateStringToTimestamp(dateStr) {
   if (!dateStr) return null;
   const date = new Date(dateStr + "T00:00:00");
@@ -31,7 +31,7 @@ function dateStringToTimestamp(dateStr) {
   return Timestamp.fromDate(date);
 }
 
-// 🔐 Listen for authentication state changes
+// Listen for authentication state changes
 onAuthStateChanged(auth, (user) => {
   if (user) {
     loginForm.style.display = 'none';
@@ -42,7 +42,7 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// 🔑 Handle login
+//Handle login
 loginForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -58,7 +58,7 @@ loginForm?.addEventListener('submit', async (e) => {
   }
 });
 
-// 🗓️ Handle adding new event (with start & end dates)
+// Handle adding new event (with start & end dates)
 eventForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
