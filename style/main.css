@@ -50,7 +50,16 @@
   .typed-fixed {
   font-size: 0.9rem;
   line-height: 12px;
-  margin: auto auto -5em auto;
+  margin: auto auto -4em auto;
+}
+
+}
+@media (max-width: 768px) {
+
+  .typed-fixed {
+  font-size: 0.9rem;
+  line-height: 12px;
+  margin: auto auto -4em auto;
 }
 
 }
