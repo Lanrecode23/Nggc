@@ -57,9 +57,9 @@
 @media (max-width: 768px) {
 
   .typed-fixed {
-  font-size: 0.9rem;
+  font-size: 0.99rem !important;
   line-height: 12px;
-  margin: auto auto -4em auto;
+  margin: auto auto -3em auto;
 }
 
 }
