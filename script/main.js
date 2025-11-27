@@ -1,4 +1,3 @@
-// Import Firebase SDKs (from CDN)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 import { getFirestore, collection, addDoc, Timestamp, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
@@ -22,6 +21,7 @@ const db = getFirestore(app);
 // Select elements
 const loginForm = document.getElementById('loginForm');
 const eventForm = document.getElementById('eventForm');
+const mediaForm = document.getElementById('mediaForm');
 
 // convert "yyyy-mm-dd" string to Firestore Timestamp
 function dateStringToTimestamp(dateStr) {
@@ -36,6 +36,8 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     loginForm.style.display = 'none';
     eventForm.style.display = 'block';
+    loginForm.style.display = "none";
+    mediaForm.style.display = "block"; 
   } else {
     loginForm.style.display = 'block';
     eventForm.style.display = 'none';

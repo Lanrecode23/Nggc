@@ -1,45 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC:wght@400;700&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC:wght@400;700&family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Truculenta:opsz,wght@12..72,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+.typed-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-.flex-col h1{
-    font-family: "Lexend Deca", sans-serif;
+.typed-fixed {
+  display: inline-block;
+  width: 360px;
+  /* MOBILE PERFECT WIDTH */
+  height: 32px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  color: #e4e2d4 !important;
+  font-size: 1rem;
+  line-height: 12px;
+  margin: auto auto -1.5em auto;
+}
+
+@media (min-width: 768px) {
+  .typed-fixed {
+    width: 520px;
+    /* DESKTOP PERFECT WIDTH */
+    height: 36px;
+    font-size: 1.2rem !important;
+    margin-bottom: -3rem;
+    color: #e4e2d4 !important;
+    line-height: 36px;
+    font-family: "Manrope", sans-serif;
+  }
+}
+
+
+
+
+.hero {
+  padding: 10rem 0rem 8rem 0rem !important;
 
 }
-.subHero_text{
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 18px!important;
+
+@media (max-width: 468px) {
+
+  .hero {
+    padding: 10rem 4rem 4rem 4rem !important;
+
+  }
+  .typed-fixed {
+  font-size: 0.9rem;
+  line-height: 12px;
+  margin: auto auto -5em auto;
 }
-.font_all{
-    font-family: "Ubuntu", sans-serif;
-    cursor: pointer;
+
 }
-.font_all .text_round{
-    font-family: "Abel", sans-serif;
+
+.flex-col h1 {
+  font-family: "Lexend Deca", sans-serif;
+  margin-bottom: 10px;
+  font-weight: 800;
+  /* font-family: 'Righteous', cursive; */
+  font-size: 4rem;
+  /* Adjust size for your screen */
+  background: linear-gradient(90deg, #ffffff, #ffff);
+  /* warm gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* makes gradient show in text */
+  text-shadow: 2px 2px 6px rgba(181, 173, 173, 0.3);
+  /* subtle shadow */
+  line-height: 1.1;
 }
-.cursor svg{
-   color: rgb(235, 230, 226);
+
+.subHero_text {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px !important;
 }
+
+.font_all {
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+}
+
+.font_all .text_round {
+  font-family: "Manrope", sans-serif;
+}
+
+.cursor svg {
+  color: rgb(235, 230, 226);
+}
+
 .service_time {
-    font-family: "Lexend Deca", sans-serif;
-    color: #fff;
-    text-shadow: 20px 20px 20px rgb(226, 9, 143);
+  font-family: "Manrope", sans-serif;
+  color: #fff;
+  text-shadow: 20px 20px 20px rgb(226, 9, 143);
 }
 
-.comment a:hover{
-    color: #f5b83d;
+.comment a:hover {
+  color: #f5b83d;
 }
-#pastors, #about, #ministries, #events, #eventsList, #contact{
-    font-family: "Ubuntu", "san-Serif";
+
+#pastors,
+#about,
+#ministries,
+#events,
+#eventsList,
+#contact {
+  font-family: "Manrope", sans-serif;
 }
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.25s ease-out;
+}
+
 
 @media (max-width: 480px) {
   .bg-cover {
     padding: 4rem 1rem;
   }
+
   .flex-col h1 {
     font-size: 34px !important
+  }
 }
-}
+
 /* 📱 Small devices (phones, ≤ 640px) */
 @media (max-width: 640px) {
   .bg-cover {

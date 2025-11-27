@@ -62,6 +62,32 @@
             </div>
         </div>
     </form>
+
+    <!-- Media Upload Form (visible after login) -->
+<form id="mediaForm" style="display: none; margin-top: 40px;">
+    <div class="card-container">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="container">
+            <div class="log-card">
+                <h3 class="text" style="margin-bottom: 20px;">Upload Media (Gallery)</h3>
+
+                <div class="input-group">
+                    <p class="text">Select Image</p>
+                    <input class="input" type="file" name="imageFile" accept="image/*" required>
+
+                    <p class="text">Caption (optional)</p>
+                    <input class="input" type="text" name="caption" placeholder="Image caption">
+                </div>
+
+                <div style="display:flex; gap:8px; align-items:center;">
+                    <button class="btn" type="submit">Upload Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="./script/main.js"></script>
 </body>
