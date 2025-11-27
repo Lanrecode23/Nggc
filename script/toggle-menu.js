@@ -43,7 +43,24 @@ new Typed("#typedSubText", {
     fadeOutDelay: 600
 });
 
+const backToTop = document.getElementById("backToTop");
 
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.remove("hidden", "opacity-0");
+      backToTop.classList.add("opacity-100");
+    } else {
+      backToTop.classList.add("opacity-0");
+      setTimeout(() => backToTop.classList.add("hidden"), 300);
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
 // Function to show modal with a specific index
 function showModal(index) {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -14,6 +15,7 @@
     <!-- Tailwind CDN-->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display text-[#181611] dark:text-white">
     <!-- Lightbox Modal -->
     <div id="imageModal"
@@ -123,7 +125,7 @@
              MAIN CONTENT
              ===================== -->
         <main class="flex-1">
-       <!-- HERO-->
+            <!-- HERO-->
             <div class="@container">
                 <div class="@[480px]:p-4 ">
                     <div class="flex min-h-[640px] hero flex-col gap-8 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl items-center justify-center p-4 text-center"
@@ -223,6 +225,13 @@
             </section>
 
 
+            <!-- Back to Top Button -->
+            <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-[#181611] dark:text-white 
+           p-3 rounded-full shadow-lg hidden opacity-0 transition-all duration-300 
+           hover:scale-110 z-50">
+                <span class="material-symbols-outlined text-3xl">arrow_upward</span>
+            </button>
+
             <!-- pastor section -->
             <section class="py-16 md:py-24" id="pastors">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -238,8 +247,7 @@
                         <div
                             class="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto bg-white dark:bg-[#2a2315] rounded-xl shadow-lg p-8">
                             <img class="w-48 h-48 rounded-full object-cover"
-                                data-alt="Professional portrait of the Overseer pastor."
-                                src="/images/overseer.jpg" />
+                                data-alt="Professional portrait of the Overseer pastor." src="/images/overseer.jpg" />
                             <div class="md:w-2/3 text-center md:text-left">
                                 <h3 class="text-2xl font-bold text-[#181611] dark:text-white">Prophet Raji Ezekiel</h3>
                                 <p class="text-primary font-semibold mb-2">Overseer</p>
