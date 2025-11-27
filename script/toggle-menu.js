@@ -12,13 +12,13 @@ const sidebar = document.getElementById("mobileSidebar");
     const closeBtn = document.getElementById("closeSidebar");
 
     function openSidebar() {
-        sidebar.classList.remove("-translate-x-full");
+        sidebar.classList.remove("translate-x-full");
         overlay.classList.remove("hidden");
         setTimeout(() => overlay.classList.remove("opacity-0"), 10);
     }
 
     function closeSidebar() {
-        sidebar.classList.add("-translate-x-full");
+        sidebar.classList.add("translate-x-full");
         overlay.classList.add("opacity-0");
         setTimeout(() => overlay.classList.add("hidden"), 300);
     }
