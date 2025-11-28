@@ -62,6 +62,8 @@ const backToTop = document.getElementById("backToTop");
     });
   });
 
+  
+
 // Function to show modal with a specific index
 function showModal(index) {
   currentIndex = index;
