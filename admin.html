@@ -11,7 +11,7 @@
 <body>
 
   <!-- LOGIN FORM -->
-  <div id="loginContainer" class="flex items-center justify-center min-h-screen px-4">
+  <div id="loginContainer" class="flex dark:bg-gray-800 items-center justify-center min-h-screen px-4">
     <form id="loginForm" class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
       <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">Admin Login</h2>
       <input type="email" name="email" placeholder="Email" class="w-full mb-4 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
@@ -51,8 +51,8 @@
         <form id="eventForm" class="space-y-4">
           <input type="text" name="title" placeholder="Event Title" class="w-full p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
           <div class="flex gap-4 flex-col sm:flex-row">
-            <input type="date" name="startDate" class="w-full sm:w-1/2 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
-            <input type="date" name="endDate" class="w-full sm:w-1/2 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" />
+            <input type="date" name="startDate" placeholder="Start Date" class="w-full sm:w-1/2 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
+            <input type="date" name="endDate" placeholder="End Date" class="w-full sm:w-1/2 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" />
           </div>
           <input type="text" name="time" placeholder="Time (e.g. 9 AM - 6 PM)" class="w-full p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" />
           <textarea name="description" placeholder="Event Description" class="w-full p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required></textarea>
