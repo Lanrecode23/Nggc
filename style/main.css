@@ -145,6 +145,13 @@
   }
 }
 
+
+/* admin dashboard css */
+#dashboard{
+  font-family: "Manrope", sans-serif !important;
+}
+
+
 /* 📱 Small devices (phones, ≤ 640px) */
 @media (max-width: 640px) {
   .bg-cover {

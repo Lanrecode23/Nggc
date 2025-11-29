@@ -1,8 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
-import { getFirestore, collection, addDoc, Timestamp, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+import { getFirestore, collection, addDoc, deleteDoc, doc, Timestamp, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
-// Firebase configuration 
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyDC5VwP6EEIcgO0m1wodA9FwXt_vn1GfQo",
   authDomain: "nggc-site.firebaseapp.com",
@@ -13,97 +13,128 @@ const firebaseConfig = {
   measurementId: "G-9WTMG243KC"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Select elements
+// Elements
 const loginForm = document.getElementById('loginForm');
 const eventForm = document.getElementById('eventForm');
-const mediaForm = document.getElementById('mediaForm');
+const dashboard = document.getElementById('dashboard');
+const loginContainer = document.getElementById('loginContainer');
+const eventsList = document.getElementById('eventsList');
+const sidebar = document.getElementById('sidebar');
+const logoutBtn = document.getElementById('logoutBtn');
+const toggleBtn = document.getElementById('toggleSidebar');
+const closeBtn = document.getElementById('closeSidebar');
 
-// convert "yyyy-mm-dd" string to Firestore Timestamp
+
+// Toggle sidebar on mobile
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.remove('-translate-x-full');
+});
+
+closeBtn.addEventListener('click', () => {
+  sidebar.classList.add('-translate-x-full');
+});
+
+
+// Login
+loginForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = e.target.email.value.trim();
+  const password = e.target.password.value;
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    loginForm.reset();
+  } catch (err) {
+    alert("❌ Login failed: Not an Admin");
+  }
+});
+
+// Logout
+logoutBtn?.addEventListener('click', async () => {
+  await signOut(auth);
+});
+
+// Auth state
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    loginContainer.style.display = 'none';
+    dashboard.classList.remove('hidden');
+  } else {
+    loginContainer.style.display = 'flex';
+    dashboard.classList.add('hidden');
+  }
+});
+
+// Convert date string to Firestore Timestamp
 function dateStringToTimestamp(dateStr) {
   if (!dateStr) return null;
   const date = new Date(dateStr + "T00:00:00");
-  if (isNaN(date.getTime())) return null;
-  return Timestamp.fromDate(date);
+  return isNaN(date.getTime()) ? null : Timestamp.fromDate(date);
 }
 
-// Listen for authentication state changes
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    loginForm.style.display = 'none';
-    eventForm.style.display = 'block';
-    loginForm.style.display = "none";
-    mediaForm.style.display = "block"; 
-  } else {
-    loginForm.style.display = 'block';
-    eventForm.style.display = 'none';
-  }
-});
-
-//Handle login
-loginForm?.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const email = e.target.email.value.trim();
-  const password = e.target.password.value;
-
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    alert('✅ Login successful!');
-  } catch (error) {
-    console.error('Login error:', error);
-    alert('❌ Login failed: Not An Admin');
-  }
-});
-
-// Handle adding new event (with start & end dates)
+// Add Event
 eventForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const title = e.target.title.value.trim();
-  const startDateStr = e.target.startDate?.value;
-  const endDateStr = e.target.endDate?.value;
-  const time = e.target.time.value.trim();
-  const description = e.target.description.value.trim();
+  const { title, startDate, endDate, time, description } = e.target;
 
-  if (!title || !startDateStr || !description) {
-    alert("⚠️ Please fill in all required fields.");
-    return;
-  }
+  if (!title.value || !startDate.value || !description.value) return alert("⚠️ Fill all required fields");
 
-  const startTs = dateStringToTimestamp(startDateStr);
-  const endTs = dateStringToTimestamp(endDateStr);
+  const startTs = dateStringToTimestamp(startDate.value);
+  const endTs = dateStringToTimestamp(endDate.value);
 
-  if (!startTs) {
-    alert("⚠️ Invalid start date.");
-    return;
-  }
-
-  if (endTs && endTs.toMillis() < startTs.toMillis()) {
-    alert("⚠️ End date cannot be before start date.");
-    return;
-  }
+  if (endTs && endTs.toMillis() < startTs.toMillis()) return alert("End date cannot be before start date");
 
   try {
     await addDoc(collection(db, "events"), {
-      title,
-      description,
-      time: time || null,
+      title: title.value.trim(),
       startDate: startTs,
       endDate: endTs || null,
+      time: time.value.trim() || null,
+      description: description.value.trim(),
       createdAt: serverTimestamp()
     });
-
-    alert("✅ Event added successfully!");
+      alert("✅ EVENT SUCCESSFULLY ADDED")
     e.target.reset();
-  } catch (error) {
-    console.error("Error adding event:", error);
-    alert("❌ Failed to add event: " + error.message);
+  } catch (err) {
+    console.error(err);
+    alert("Failed to add event");
   }
 });
 
-AOS.init();
+// Load events for admin panel
+const eventsQuery = query(collection(db, "events"), orderBy("startDate", "asc"));
+onSnapshot(eventsQuery, (snapshot) => {
+  eventsList.innerHTML = "";
+  snapshot.forEach(docSnap => {
+    const data = docSnap.data();
+    const id = docSnap.id;
+    const start = data.startDate ? new Date(data.startDate.seconds * 1000) : null;
+    const end = data.endDate ? new Date(data.endDate.seconds * 1000) : null;
+
+    const card = document.createElement("div");
+    card.className = "bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md flex justify-between items-start";
+    card.innerHTML = `
+      <div>
+        <h3 class="font-bold text-yellow-600 text-lg">${data.title}</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          ${start ? start.toLocaleDateString() : ""}${end ? " - " + end.toLocaleDateString() : ""} ${data.time || ""}
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 mt-1">${data.description}</p>
+      </div>
+      <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md delete-btn">Delete</button>
+    `;
+
+    card.querySelector(".delete-btn").addEventListener("click", async () => {
+      if (confirm("Are you sure you want to delete this event?")) {
+        await deleteDoc(doc(db, "events", id));
+      }
+    });
+
+    eventsList.appendChild(card);
+  });
+});

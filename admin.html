@@ -1,94 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-gray-100">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel - Add Event</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGGC Admin Dashboard</title>
+  <link rel="stylesheet" href="/style/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <h2 class="Admin_dashboard">Admin Dashboard</h2>
-    <!-- Admin Login Form -->
-    <form class="form" id="loginForm">
-        <p class="form-title">Login to Add Events</p>
-        <div class="input-container">
-            <input placeholder="Enter email" type="email" name="email" required>
-            <span>
-                <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                        stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-                </svg>
-            </span>
-        </div>
-        <div class="input-container">
-            <input placeholder="Enter password" type="password" name="password" required>
-        </div>
-        <button class="submit" type="submit">
-            L o g i n
+
+  <!-- LOGIN FORM -->
+  <div id="loginContainer" class="flex items-center justify-center min-h-screen px-4">
+    <form id="loginForm" class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">Admin Login</h2>
+      <input type="email" name="email" placeholder="Email" class="w-full mb-4 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
+      <input type="password" name="password" placeholder="Password" class="w-full mb-6 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
+      <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded">Login</button>
+      <p id="loginMsg" class="text-red-500 mt-4 text-center"></p>
+    </form>
+  </div>
+
+  <!-- ADMIN DASHBOARD -->
+  <div id="dashboard" class="hidden flex min-h-screen">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar bg-gray-800 text-white w-64 p-6 flex flex-col fixed h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300" id="sidebar">
+      <!-- Mobile Close Button -->
+      <div class="md:hidden flex justify-end mb-4">
+        <button id="closeSidebar" class="bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-200 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="gray" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
         </button>
-        <p id="loginMsg" style="color: red; margin-top: 8px;"></p>
-    </form>
+      </div>
 
-    <!-- Event Upload Form (hidden until login) -->
-    <form id="eventForm" style="display: none;">
-        <div class="card-container">
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-            <div class="container">
-                <div class="log-card">
-                    <div class="input-group">
-                        <p class="text">Title</p>
-                        <input class="input" type="text" name="title" placeholder="Event Title" required>
-
-                        <p class="text">Start Date</p>
-                        <input class="input" type="date" name="startDate" required>
-
-                        <p class="text">End Date (optional)</p>
-                        <input class="input" type="date" name="endDate">
-
-                        <p class="text">Time</p>
-                        <input type="text" name="time" placeholder="e.g. 9:00 AM - 6:00 PM"  class="input" />
-
-                        <p class="text">Details of the event</p>
-                        <textarea name="description" placeholder="Event Description" class="input" required></textarea>
-                    </div>
-
-                    <div style="display:flex; gap:8px; align-items:center;">
-                        <button class="btn" type="submit">Add event</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-
-    <!-- Media Upload Form (visible after login) -->
-<form id="mediaForm" style="display: none; margin-top: 40px;">
-    <div class="card-container">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="container">
-            <div class="log-card">
-                <h3 class="text" style="margin-bottom: 20px;">Upload Media (Gallery)</h3>
-
-                <div class="input-group">
-                    <p class="text">Select Image</p>
-                    <input class="input" type="file" name="imageFile" accept="image/*" required>
-
-                    <p class="text">Caption (optional)</p>
-                    <input class="input" type="text" name="caption" placeholder="Image caption">
-                </div>
-
-                <div style="display:flex; gap:8px; align-items:center;">
-                    <button class="btn" type="submit">Upload Image</button>
-                </div>
-            </div>
-        </div>
+      <h2 class="text-2xl font-bold mb-8">Admin Panel</h2>
+      <a href="/" class="mb-4 hover:text-yellow-400">🏠 Home</a>
+      <button id="logoutBtn" class="mb-4 hover:text-yellow-400 text-left">🚪 Logout</button>
     </div>
-</form>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="module" src="./script/main.js"></script>
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 ml-0 md:ml-64 p-6">
+      <!-- Mobile Sidebar Toggle -->
+      <button id="toggleSidebar" class="md:hidden mb-4 px-3 py-2 bg-gray-800 text-white rounded shadow">Menu</button>
+
+      <!-- EVENT FORM -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h2 class="text-xl font-bold mb-4 text-gray-800">Add Event</h2>
+        <form id="eventForm" class="space-y-4">
+          <input type="text" name="title" placeholder="Event Title" class="w-full p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
+          <div class="flex gap-4 flex-col sm:flex-row">
+            <input type="date" name="startDate" class="w-full sm:w-1/2 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required />
+            <input type="date" name="endDate" class="w-full sm:w-1/2 p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" />
+          </div>
+          <input type="text" name="time" placeholder="Time (e.g. 9 AM - 6 PM)" class="w-full p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" />
+          <textarea name="description" placeholder="Event Description" class="w-full p-3 rounded border border-gray-300 bg-gray-50 text-gray-800" required></textarea>
+          <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded">Add Event</button>
+        </form>
+      </div>
+
+      <!-- EVENTS LIST -->
+      <h2 class="text-xl font-bold mb-4 text-gray-800">All Events</h2>
+      <div id="eventsList" class="space-y-4"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/script/main.js"></script>
 </body>
 </html>
