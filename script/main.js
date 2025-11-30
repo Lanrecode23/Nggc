@@ -47,6 +47,7 @@ loginForm?.addEventListener('submit', async (e) => {
   const password = e.target.password.value;
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    alert(" ✅✅Login Successful");
     loginForm.reset();
   } catch (err) {
     alert("❌ Login failed: Not an Admin");
