@@ -118,6 +118,13 @@
   font-family: "Manrope", sans-serif;
 }
 
+#about p,
+#ministries p {
+  font-size: 16px!important;
+} 
+/* #pastors p{
+  font-size: 14px;
+} */
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -142,6 +149,13 @@
 
   .flex-col h1 {
     font-size: 34px !important
+  }
+  #about p {
+  font-size: 14px!important;
+  text-align: justify;
+} 
+  #pastors p{
+    font-size: 14px;
   }
 }
 
