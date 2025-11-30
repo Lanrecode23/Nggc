@@ -117,7 +117,15 @@
 #contact {
   font-family: "Manrope", sans-serif;
 }
-
+#donateText h2, #donateText p{
+  font-family: "Manrope", sans-serif;
+}
+#donateText p{
+  font-size: 14px;
+}
+.details span{
+  font-weight: 500!important;
+}
 @keyframes slide-down {
   from {
     opacity: 0;

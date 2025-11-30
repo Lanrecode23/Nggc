@@ -635,15 +635,17 @@
 
         <!-- Donation Modal Overlay -->
         <div id="donationOverlay"
-            class="fixed inset-0 bg-black/50 z-[100] hidden opacity-0 transition-opacity duration-300"></div>
+            class="fixed inset-0 bg-black/30 backdrop-blur-lg z-[100] hidden opacity-0 transition-opacity duration-300"></div>
 
         <!-- Donation Modal -->
         <div id="donationModal" class="fixed inset-0 z-[110] hidden opacity-0 scale-90 transition-all duration-300 
            flex items-center justify-center">
 
-            <div class="p-8 rounded-xl shadow-lg w-11/12 max-w-md relative
+            <!-- <div class="p-8 rounded-xl shadow-lg w-11/12 max-w-md relative
             bg-gradient-to-br from-yellow-50 via-yellow-100 to-yellow-200
-            dark:bg-[#1f1f1f]">
+            dark:bg-[#1f1f1f]"> -->
+
+             <div class="bg-white dark:bg-[#1f1f1f] p-8 rounded-xl shadow-lg w-11/12 max-w-md relative" id="donateText">
 
                 <!-- <div class="relative w-11/12 max-w-md p-8 rounded-xl shadow-lg
                 bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300
@@ -667,7 +669,7 @@
                 <!-- Bank Account -->
                 <div class="space-y-4">
 
-                    <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg relative">
+                    <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg relative  details">
                         <p class="font-semibold text-[#181611] dark:text-white">
                             Bank Name:
                             <span class="font-normal">FCMB (First City Monument Bank PLC)</span>
