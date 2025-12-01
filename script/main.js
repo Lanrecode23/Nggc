@@ -122,7 +122,15 @@ eventForm?.addEventListener('submit', async (e) => {
       description: description.value.trim(),
       createdAt: serverTimestamp()
     });
-    alert("✅ EVENT SUCCESSFULLY ADDED")
+    Swal.fire({
+      title: "Event Successfully Added",
+      icon: "success",
+      customClass: {
+        title: 'small-title',
+        popup: 'small-popup'
+      },
+      showConfirmButton: true,
+    });
     e.target.reset();
   } catch (err) {
     console.error(err);
