@@ -45,14 +45,35 @@ loginForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = e.target.email.value.trim();
   const password = e.target.password.value;
+
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    alert(" ✅✅Login Successful");
+
     loginForm.reset();
+
+    await Swal.fire({
+      title: "Successfully Logged In",
+      icon: "success",
+      customClass: {
+        title: 'small-title',
+        popup: 'small-popup'
+      },
+      showConfirmButton: true,
+      timer: 1500
+    });
+
   } catch (err) {
-    alert("❌ Login failed: Not an Admin");
+    Swal.fire({
+      title: "Login Failed: Not an Admin",
+      icon: "error",
+      customClass: {
+        title: 'small-title',
+        popup: 'small-popup'
+      }
+    });
   }
 });
+
 
 // Logout
 logoutBtn?.addEventListener('click', async () => {
@@ -62,8 +83,10 @@ logoutBtn?.addEventListener('click', async () => {
 // Auth state
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    loginContainer.style.display = 'none';
+    setTimeout (()=>{
+      loginContainer.style.display = 'none';
     dashboard.classList.remove('hidden');
+    }, 1500)
   } else {
     loginContainer.style.display = 'flex';
     dashboard.classList.add('hidden');
@@ -99,7 +122,7 @@ eventForm?.addEventListener('submit', async (e) => {
       description: description.value.trim(),
       createdAt: serverTimestamp()
     });
-      alert("✅ EVENT SUCCESSFULLY ADDED")
+    alert("✅ EVENT SUCCESSFULLY ADDED")
     e.target.reset();
   } catch (err) {
     console.error(err);
