@@ -83,9 +83,9 @@ logoutBtn?.addEventListener('click', async () => {
 // Auth state
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    setTimeout (()=>{
+    setTimeout(() => {
       loginContainer.style.display = 'none';
-    dashboard.classList.remove('hidden');
+      dashboard.classList.remove('hidden');
     }, 1500)
   } else {
     loginContainer.style.display = 'flex';
@@ -114,14 +114,6 @@ eventForm?.addEventListener('submit', async (e) => {
   if (endTs && endTs.toMillis() < startTs.toMillis()) return alert("End date cannot be before start date");
 
   try {
-    await addDoc(collection(db, "events"), {
-      title: title.value.trim(),
-      startDate: startTs,
-      endDate: endTs || null,
-      time: time.value.trim() || null,
-      description: description.value.trim(),
-      createdAt: serverTimestamp()
-    });
     Swal.fire({
       title: "Event Successfully Added",
       icon: "success",
@@ -130,6 +122,14 @@ eventForm?.addEventListener('submit', async (e) => {
         popup: 'small-popup'
       },
       showConfirmButton: true,
+    });
+    await addDoc(collection(db, "events"), {
+      title: title.value.trim(),
+      startDate: startTs,
+      endDate: endTs || null,
+      time: time.value.trim() || null,
+      description: description.value.trim(),
+      createdAt: serverTimestamp()
     });
     e.target.reset();
   } catch (err) {
@@ -162,9 +162,45 @@ onSnapshot(eventsQuery, (snapshot) => {
     `;
 
     card.querySelector(".delete-btn").addEventListener("click", async () => {
-      if (confirm("Are you sure you want to delete this event?")) {
-        await deleteDoc(doc(db, "events", id));
-      }
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Do you really want to delete this event?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it",
+        cancelButtonText: "Cancel",
+        customClass: {
+          popup: 'small-popup',
+          title: 'small-title'
+        }
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          try {
+            Swal.fire({
+              title: "Deleted!",
+              text: "The event has been deleted.",
+              icon: "success",
+              showConfirmButton: true,
+              customClass: {
+                popup: 'small-popup',
+                title: 'small-title'
+              }
+
+            }); await deleteDoc(doc(db, "events", id));
+          } catch (err) {
+            Swal.fire({
+              title: "Error!",
+              text: "Failed to delete the event.",
+              icon: "error",
+              showConfirmButton: true,
+              customClass: {
+                popup: 'small-popup',
+                title: 'small-title'
+              }
+            });
+          }
+        }
+      });
     });
 
     eventsList.appendChild(card);
