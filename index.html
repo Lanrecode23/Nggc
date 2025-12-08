@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -15,6 +16,7 @@
     <!-- Tailwind CDN-->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display text-[#181611] dark:text-white">
     <!-- Lightbox Modal -->
     <div id="imageModal"
@@ -36,16 +38,17 @@
                 <div class="flex items-center justify-between h-16">
 
                     <!-- Logo -->
-                <a href="/">
-                    <div class="flex items-center gap-3 text-[#181611] dark:text-white">
-                        <div class="size-8 text-primary">
-                            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
-                            </svg>
+                    <a href="/">
+                        <div class="flex items-center gap-3 text-[#181611] dark:text-white">
+                            <div class="size-8 text-primary">
+                                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h2 class="text-xl font-bold">NGGC</h2>
                         </div>
-                        <h2 class="text-xl font-bold">NGGC</h2>
-                    </div>
-                </a>
+                    </a>
 
                     <!-- Desktop Nav -->
                     <nav class="hidden md:flex gap-8 items-center">
@@ -310,12 +313,12 @@
                     </div>
                     <div class="rounded-xl p-6 bg-white dark:bg-[#2a2315] shadow-sm text-center">
                         <h3 class="font-bold text-lg mb-2">Wednesday Bible Study</h3>
-                        <p class="text-primary font-bold text-xl">5:30 PM</p>
+                        <p class="text-primary font-bold text-xl">6:00 PM</p>
                         <p class="text-sm text-[#8a7c60] dark:text-[#a1967d] mt-1">In-depth study of the scriptures.</p>
                     </div>
                     <div class="rounded-xl p-6 bg-white dark:bg-[#2a2315] shadow-sm text-center">
-                        <h3 class="font-bold text-lg mb-2">Friday Prayer Meeting</h3>
-                        <p class="text-primary font-bold text-xl">6:00 PM</p>
+                        <h3 class="font-bold text-lg mb-2">Friday Vigil</h3>
+                        <p class="text-primary font-bold text-xl">11:00 PM</p>
                         <p class="text-sm text-[#8a7c60] dark:text-[#a1967d] mt-1">Join us as we seek God's presence.
                         </p>
                     </div>
@@ -325,55 +328,81 @@
             <section class="py-16 md:py-24" id="ministries">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
-                        <h2
-                            class="text-3xl font-bold leading-tight tracking-[-0.015em] sm:text-4xl text-[#181611] dark:text-white">
-                            Our Ministries</h2>
-                        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-                            We offer a variety of ministries designed to help you connect with others and grow in your
-                            faith.
+                        <h2 class="text-3xl font-bold leading-tight tracking-[-0.015em] sm:text-4xl text-[#181611]">
+                            Our Ministries
+                        </h2>
+                        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                            Explore the different ministry teams in our church.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div
-                            class="bg-white dark:bg-background-dark/50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                            <img alt="Children playing with blocks" class="h-48 w-full object-cover" loading="lazy"
-                                src="./images/teen.png" />
+                    <!-- Scrollable Ministries -->
+                    <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
+
+                        <!-- Worship Team -->
+                        <div class="min-w-[260px] bg-white rounded-xl shadow-md overflow-hidden snap-start 
+            transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.okjl_frA86zKdM1CcN-BywHaE7?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+                                class="h-40 w-full object-cover" alt="Worship Team">
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-[#181611] dark:text-white">Children's Ministry
-                                </h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">A fun and safe environment for
-                                    kids to learn about Jesus.</p>
-                                <a class="font-medium text-primary hover:text-primary/80" href="#">Learn More</a>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white dark:bg-background-dark/50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                            <img alt="Group of teenagers laughing together" class="h-48 w-full object-cover"
-                                loading="lazy" src="./images/youth.jpeg" />
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-[#181611] dark:text-white">Youth Group</h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">A place for teens to connect,
-                                    grow, and have fun.</p>
-                                <a class="font-medium text-primary hover:text-primary/80" href="#">Learn More</a>
+                                <h3 class="text-xl font-bold mb-2 text-[#181611]">Worship Team</h3>
+                                <p class="text-gray-600 text-sm mb-4">Leading the church in spirit-filled worship.</p>
                             </div>
                         </div>
 
-                        <div
-                            class="bg-white dark:bg-background-dark/50 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                            <img alt="Hands holding a plant" class="h-48 w-full object-cover" loading="lazy"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuApYw9UUsms1YDSRDJt5TZQRAxsp9E1lGhrH0pPZTZLLT8xy5VSuiEbPxjSvAkkLy4QM9iqIlLdCb8UBjYEBngh0k1PyiSQ2ctDE0ql6JfwFmanzMDr8cKKYQRSUob-JlhuxmyRtbVPJrFvh07ES9t1I1GdX9IAH4NybDRhIIIww9V4jSoVLnsdUFfqteSGRC31KYY3S0tD0XJiNX4d9ZhnZjoePD3cJ5VV8eDWuzRa2aDhMFWk4B1jOVNKwpXlMnloMMrSYZlP3ok" />
+                        <!-- Media Team -->
+                        <div class="min-w-[260px] bg-white rounded-xl shadow-md overflow-hidden snap-start 
+            transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.bCrfIK2HrXKdXMcEOotRXwHaEK?cb=ucfimg2&pid=ImgDet&ucfimg=1&w=184&h=103&c=7&dpr=1.3&o=7&rm=3"
+                                class="h-40 w-full object-cover" alt="Media Team">
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-[#181611] dark:text-white">Community Outreach
-                                </h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Serving our local community and
-                                    sharing God's love.</p>
-                                <a class="font-medium text-primary hover:text-primary/80" href="#">Learn More</a>
+                                <h3 class="text-xl font-bold mb-2 text-[#181611]">Media Team</h3>
+                                <p class="text-gray-600 text-sm mb-4">Managing visuals, sound, and recordings.</p>
                             </div>
                         </div>
+
+                        <!-- Protocol Team -->
+                        <div class="min-w-[260px] bg-white rounded-xl shadow-md overflow-hidden snap-start 
+            transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
+                            <img src="https://th.bing.com/th/id/OIP.wQIbmmboEmBwzuKky6MrgQHaHa?w=162&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1"
+                                class="h-40 w-full object-cover" alt="Protocol Team">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-[#181611]">Protocol Team</h3>
+                                <p class="text-gray-600 text-sm mb-4">Ensuring order and coordination during services.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Usher Team -->
+                        <div class="min-w-[260px] bg-white rounded-xl shadow-md overflow-hidden snap-start 
+            transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
+                            <img src="https://th.bing.com/th/id/R.a3b9f0341aa4bf1cbba790e7f2b0e89a?rik=foVRbkfT6KdoPw&pid=ImgRaw&r=0"
+                                class="h-40 w-full object-cover" alt="Usher Team">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-[#181611]">Usher Team</h3>
+                                <p class="text-gray-600 text-sm mb-4">Welcoming and assisting members during service.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Children Teacher Team -->
+                        <div class="min-w-[260px] bg-white rounded-xl shadow-md overflow-hidden snap-start 
+            transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
+                            <img src="https://th.bing.com/th/id/R.0b70782797a0586a2c5956b344cf3361?rik=MtZkelrjDttDgA&riu=http%3a%2f%2fimages.clipartpanda.com%2fkids-church-clip-art-childrens-church.jpg&ehk=odsigP6Ah2bIMEGWALW2B2AEBHcjkMwNCwDd6E9c8kc%3d&risl=&pid=ImgRaw&r=0"
+                                class="h-40 w-full object-cover" alt="Children Team">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-[#181611]">Children Teacher Team</h3>
+                                <p class="text-gray-600 text-sm mb-4">Teaching children the foundations of faith.</p>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
             </section>
+
+
+
 
             <!-- LATEST SERMON-->
             <!-- <section class="py-16 md:py-24 bg-white dark:bg-background-dark/50" id="sermons">
@@ -608,14 +637,15 @@
                                         fill-rule="evenodd"></path>
                                 </svg></a>
                             <a class="text-gray-400 hover:text-white"
-                                href="https://www.instagram.com/prophet_raji_global_ministries?igsh=cjRtaTB5c283eXRz" target="_blank"><span
-                                    class="sr-only">Instagram</span><svg aria-hidden="true" class="h-6 w-6"
-                                    fill="currentColor" viewbox="0 0 24 24">
+                                href="https://www.instagram.com/prophet_raji_global_ministries?igsh=cjRtaTB5c283eXRz"
+                                target="_blank"><span class="sr-only">Instagram</span><svg aria-hidden="true"
+                                    class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
                                     <path clip-rule="evenodd"
                                         d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
                                         fill-rule="evenodd"></path>
                                 </svg></a>
-                            <a class="text-gray-400 hover:text-white" href="https://www.tiktok.com/@prophet.raji.glob?_t=ZS-90sf2Vz1cZ7&_r=1" target="_blank">
+                            <a class="text-gray-400 hover:text-white"
+                                href="https://www.tiktok.com/@prophet.raji.glob?_t=ZS-90sf2Vz1cZ7&_r=1" target="_blank">
                                 <span class="sr-only">TikTok</span>
                                 <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 256 256">
                                     <path
@@ -628,8 +658,8 @@
                 </div>
                 <div class="mt-8 border-t border-gray-700 pt-8 text-center comment">
                     <!-- Suggestion: replace static year with JS to keep it up-to-date automatically -->
-                    <p class="text-base text-gray-400">© 2025 Nggc. All rights reserved. Made with ❤️ by <a
-                            href="http://msoftfolio.vercel.app">Msoft</a></p>
+                    <p class="text-base text-gray-400">© <span id="currentYear"></span> Nggc. All rights reserved. Made
+                        with ❤️ by <a href="http://msoftfolio.vercel.app">Msoft</a></p>
                     <p class="text-base text-gray-400"></p>
                 </div>
             </div>
@@ -637,22 +667,15 @@
 
         <!-- Donation Modal Overlay -->
         <div id="donationOverlay"
-            class="fixed inset-0 bg-black/30 backdrop-blur-lg z-[100] hidden opacity-0 transition-opacity duration-300"></div>
+            class="fixed inset-0 bg-black/30 backdrop-blur-lg z-[100] hidden opacity-0 transition-opacity duration-300">
+        </div>
 
         <!-- Donation Modal -->
         <div id="donationModal" class="fixed inset-0 z-[110] hidden opacity-0 scale-90 transition-all duration-300 
            flex items-center justify-center">
 
-            <!-- <div class="p-8 rounded-xl shadow-lg w-11/12 max-w-md relative
-            bg-gradient-to-br from-yellow-50 via-yellow-100 to-yellow-200
-            dark:bg-[#1f1f1f]"> -->
+            <div class="bg-white dark:bg-[#1f1f1f] p-8 rounded-xl shadow-lg w-11/12 max-w-md relative" id="donateText">
 
-             <div class="bg-white dark:bg-[#1f1f1f] p-8 rounded-xl shadow-lg w-11/12 max-w-md relative" id="donateText">
-
-                <!-- <div class="relative w-11/12 max-w-md p-8 rounded-xl shadow-lg
-                bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300
-                dark:from-gray-800 dark:via-gray-900 dark:to-black
-                text-[#181611] dark:text-white"> -->
 
                 <!-- Close Button -->
                 <button id="closeDonation"

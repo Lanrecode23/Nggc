@@ -25,6 +25,7 @@ const donationButtons = document.querySelectorAll("#donateBtn, a[href='#giving']
 const donationModal = document.getElementById("donationModal");
 const donationOverlay = document.getElementById("donationOverlay");
 const closeDonation = document.getElementById("closeDonation");
+const currentYear = document.getElementById("currentYear")
 
 // OPEN MODAL
 donationButtons.forEach(btn => {
@@ -66,3 +67,7 @@ document.getElementById("copyAcct").addEventListener("click", () => {
         setTimeout(() => msg.classList.add("opacity-0"), 1500);
     });
 });
+
+//Get the current year 
+const year = new Date().getFullYear()
+currentYear.innerHTML = year
