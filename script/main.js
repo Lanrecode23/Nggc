@@ -74,7 +74,6 @@ loginForm?.addEventListener('submit', async (e) => {
   }
 });
 
-
 // Logout
 logoutBtn?.addEventListener('click', async () => {
   await signOut(auth);
