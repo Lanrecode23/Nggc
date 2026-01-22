@@ -2,8 +2,12 @@
 
 html {
   scroll-behavior: smooth;
+  
 }
+.mfm_text{
+    font-family: "Hubot Sans", sans-serif;
 
+}
 .typed-container {
   width: 100%;
   display: flex;
@@ -37,11 +41,8 @@ html {
   }
 }
 
-
-
-
 .hero {
-  padding: 10rem 0rem 8rem 0rem !important;
+  padding: 10rem 0rem 6rem 0rem !important;
 
 }
 
@@ -72,7 +73,6 @@ html {
   font-family: "Nosifer", sans-serif;
   margin-bottom: 10px;
   font-weight: 700;
-  /* font-family: 'Righteous', cursive; */
   font-size: 3.5rem;
   /* Adjust size for your screen */
   background: linear-gradient(90deg, #ffffff, #ffff);
@@ -86,7 +86,7 @@ html {
 }
 
 .subHero_text {
-  font-family: "Manrope", sans-serif;
+  font-family: "Hubot Sans", sans-serif;
   font-size: 18px !important;
 }
 
@@ -182,6 +182,10 @@ html {
 @media (max-width: 640px) {
   .bg-cover {
     padding: 4rem;
+  }
+  .flex-col h1 {
+    font-size: 26px !important;
+    margin-top: -15px;
   }
 }
 
