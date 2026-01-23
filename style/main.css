@@ -80,7 +80,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* makes gradient show in text */
-  text-shadow: 2px 2px 6px rgba(181, 173, 173, 0.3);
+  
   /* subtle shadow */
   line-height: 1.1;
 }
