@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -15,6 +16,7 @@
     <!-- Tailwind CDN-->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display text-[#181611] dark:text-white">
     <!-- Lightbox Modal -->
     <div id="imageModal"
@@ -63,7 +65,7 @@
 
                             Give / Donate
                         </button>
-                        
+
                         <!-- Mobile menu button -->
                         <button id="openSidebar" class="md:hidden p-2">
                             <span class="material-symbols-outlined text-3xl">menu</span>
@@ -130,8 +132,7 @@
             <div class="@container">
                 <div class="@[480px]:p-4">
                     <div class="flex min-h-[640px] hero flex-col gap-8 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl items-center         justify-center p-4 text-center"
-                        data-alt="A diverse group of people worshiping together"
-                        style='background-image:
+                        data-alt="A diverse group of people worshiping together" style='background-image:
                         linear-gradient(rgba(0, 0, 0, 0.674), rgba(0, 0, 0, 0.811)),
                         url("https://mfmstorage.blob.core.windows.net/mfmwebsite/images/MFM.jpg");'>
 
@@ -352,8 +353,7 @@
                         <!-- Worship Team -->
                         <div
                             class="min-w-[260px] bg-white rounded-xl shadow-md overflow-hidden snap-start transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-                            <img src="/images/choir.png"
-                                class="h-40 w-full object-cover" alt="Worship Team">
+                            <img src="/images/choir.png" class="h-40 w-full object-cover" alt="Worship Team">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2 text-[#181611]">Worship Team</h3>
                                 <p class="text-gray-600 text-sm mb-4">Leading the church in spirit-filled worship.</p>
@@ -533,19 +533,19 @@
                             </div>
                         </div>
                     </div>
-                      <button
-                    class="mt-5  flex justify-center gap-2 items-center mx-auto shadow-xl text-lg text-gray-50 bg-[#A12347] backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-primary hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
-                    type="submit">
-                    See More
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 19"
-                        class="w-8 h-8 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45">
-                        <path class="fill-gray-800 group-hover:fill-gray-800"
-                            d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z">
-                        </path>
-                    </svg>
-                </button>
+                    <button
+                        class="mt-5  flex justify-center gap-2 items-center mx-auto shadow-xl text-lg text-gray-50 bg-[#A12347] backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-primary hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
+                        type="submit">
+                        See More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 19"
+                            class="w-8 h-8 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45">
+                            <path class="fill-gray-800 group-hover:fill-gray-800"
+                                d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z">
+                            </path>
+                        </svg>
+                    </button>
                 </div>
-              
+
             </section>
             <!-- EVENTS-->
             <section class="py-16 md:py-24" id="events">
@@ -768,6 +768,20 @@
             once: true
         });
     </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/697fc6ba65c32e1c37b47671/1jgdi0jcv';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 
 </html>
