@@ -39,7 +39,7 @@ function formatDateRange(startDate, endDate) {
   const endYear = end.getFullYear();
 
   // Same month & year
-  if (startMonth === endMonth && startYear === endYear) {
+  if (startMonth === endMonth && startYear === endYear ) {
     return `${startMonth} ${startDay} – ${endDay}, ${startYear}`;
   }
 
@@ -60,7 +60,7 @@ onSnapshot(q, (snapshot) => {
     return;
   }
 
-  listEl.innerHTML = ""; // Clear existing content
+  listEl.innerHTML = ""; 
 
   let index = 0;
   snapshot.forEach((doc) => {
