@@ -6,12 +6,16 @@ html {
 }
 .mfm_text{
     font-family: "Hubot Sans", sans-serif;
-
 }
 .typed-container {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.marqueeText{
+  font-family: "Lexend Deca", sans-serif;
+  background-color: #62615e;
 }
 
 .typed-fixed {
@@ -107,6 +111,7 @@ html {
   font-family: "Manrope", sans-serif;
   color: #fff;
   text-shadow: 20px 20px 20px rgb(226, 9, 143);
+  
 }
 
 .comment a:hover {
